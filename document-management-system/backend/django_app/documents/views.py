@@ -44,7 +44,7 @@ def get_outgoing_document(request, document_id):
             'recipient': document.recipient,
             'date_sent': document.date_sent,
             'file': document.file.url
-        })
+        })  
     except OutgoingDocument.DoesNotExist:
         return JsonResponse({'error': 'Document not found'}, status=404)
 def get_incoming_document(request, document_id):
