@@ -1,6 +1,16 @@
+import os
+import sys
+import django
+
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(project_root)
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_app.settings')
+django.setup()
+
 from django.shortcuts import render
 from django.http import JsonResponse
-from .models import OutgoingDocument, IncomingDocument
+from .models import OutgoingDocument, IncomingDocument  # revert to relative import
 from django.views.decorators.csrf import csrf_exempt
 import json
 
@@ -35,6 +45,7 @@ def list_outgoing_documents(request):
 def list_incoming_documents(request):
     documents = IncomingDocument.objects.all().values()
     return JsonResponse(list(documents), safe=False)
+
 def get_outgoing_document(request, document_id):
     try:
         document = OutgoingDocument.objects.get(id=document_id)
@@ -47,6 +58,7 @@ def get_outgoing_document(request, document_id):
         })  
     except OutgoingDocument.DoesNotExist:
         return JsonResponse({'error': 'Document not found'}, status=404)
+
 def get_incoming_document(request, document_id):
     try:
         document = IncomingDocument.objects.get(id=document_id)
@@ -59,6 +71,7 @@ def get_incoming_document(request, document_id):
         })
     except IncomingDocument.DoesNotExist:
         return JsonResponse({'error': 'Document not found'}, status=404)
+
 def update_outgoing_document(request, document_id):
     if request.method == 'PUT':
         data = json.loads(request.body)
