@@ -1,0 +1,18 @@
+# Cài python version 3.11, không lên version > 3.11 để tránh gặp lỗi liên quan đến thư viện
+# Tạo môi trường ảo:
+python -m venv venv
+
+# Vào thư mục dự án bằng cmd bằng lệnh cd
+cd Downloads\Website_AI
+# Kích hoạt môi trường ảo:
+venv\Scripts\activate
+# Cài đặt các thư viện cần thiết backend:
+# Sửa numpy==1.24.3 thành numpy==1.23.5 trong requirements.txt để tương thích với các thư viện khác
+pip install -r document-management-system\backend\django_app\requirements.txt
+
+
+# comment open_notebook
+# comment Document trong admin.py do trong models.py đang thiếu Document
+python document-management-system\backend\django_app\manage.py migrate
+
+pip install -r document-management-system\backend\fastapi_app\requirements.txt

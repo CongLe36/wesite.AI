@@ -1,0 +1,12 @@
+fastapi[all]
+uvicorn
+pydantic
+httpx
+python-multipart
+pillow
+numpy
+opencv-python
+beautifulsoup4
+nltk
+transformers
+torch
