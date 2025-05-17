@@ -51,3 +51,19 @@ GoodsWebAPI/
 
 # Other files
 battery-report.html
+
+# Python virtual environment and cache
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+
+# VS Code
+.vscode/
+*.code-workspace
+.history/
+debugpy-*
+vscode.git.Git
