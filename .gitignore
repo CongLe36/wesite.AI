@@ -1,0 +1,53 @@
+# Git system files
+.git/
+*.git
+
+# Windows system and cache files
+AppData/**
+**/AppData/**
+**/Local/AMD/**
+**/DX9Cache/**
+**/*.parc
+**/*.blf
+**/*.regtrans-ms
+
+# Windows temp and cache
+**/Temp/**
+**/Cache/**
+**/Caches/**
+Local Settings/**
+Temporary Internet Files/**
+
+# User profile directories
+Contacts/
+Desktop/
+Documents/
+Downloads/
+Favorites/
+Links/
+Music/
+Pictures/
+"Saved Games"/
+Searches/
+Videos/
+OneDrive/
+
+# Application data and temp files
+.Ld9VirtualBox/
+.bash_history
+.dacfx/
+.dotnet/
+.gitconfig
+.ipython/
+.lesshst
+.m2/
+.nuget/
+.templateengine/
+source/
+GoodsWebAPI/
+*~
+*.swp
+*.tmp
+
+# Other files
+battery-report.html
