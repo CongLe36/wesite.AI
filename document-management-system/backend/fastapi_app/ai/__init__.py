@@ -1,0 +1,1 @@
+# The file /document-management-system/document-management-system/backend/fastapi_app/ai/__init__.py is intentionally left blank.
